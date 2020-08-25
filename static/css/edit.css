@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+.container-x{
+    display: grid;
+
+}
+.options{
+    padding-top: 50px;
+    min-height: 100vh;
+    background-color: red;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.option{
+    margin-top: 1vh;
+    height: 8vh;
+    background-color: sandybrown;
+}
+.option:hover{
+    border-left: 13px solid cadetblue;
+}
+.fields>input{
+    display: block;
+}
+.fields{
+    display: none;
+    padding: 2vh 10%;
+}
+.vis{
+    display: block;
+}
+.txt{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+form{
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-gap: 2vh;
+    margin-top: 5vh;
+}
+.formgrp{
+    margin-bottom: 2vh;
+}
+.formgrp>label,.imgtxt{
+    display: block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+}
+.formgrp>input{
+    text-decoration: none;
+    border: solid 1px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    display: block;
+    width: 90%;
+    height: 5vh;
+    background: #EAF2F2;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+.formgrp>textarea{
+    text-decoration: none;
+    display: block;
+    width: 90%;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    background: #EAF2F2;
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25);
+}
+#submit{
+    margin-top: 2vh;
+    display: block;
+    height: 50px;
+    width: 200px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    background: #8DC63F;
+    border-radius: 7px;
+    border: none;
+}
+.primg>img{
+    display: block;
+    height: max(20vw,20vh);
+    width: max(20vw,20vh);
+    background-image: url('/static/images/profile-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: whitesmoke;
+}
