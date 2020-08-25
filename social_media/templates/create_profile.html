@@ -1,0 +1,14 @@
+{% comment %} {% extends 'base.html' %} 
+{% load static %} 
+{% load widget_tweaks %}
+
+{% block css %}
+{% endblock %} 
+{% block title %}Complete Profile{% endblock %} 
+{% block content %} {% endcomment %}
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit">
+</form>
+{% comment %} {% endblock %}  {% endcomment %}
