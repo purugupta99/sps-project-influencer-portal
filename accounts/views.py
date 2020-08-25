@@ -83,4 +83,4 @@ def register(request):
 def my_logout(request):
     print(request.user.id)
     logout(request)
-    return redirect('home')
+    return redirect('accounts:home')
