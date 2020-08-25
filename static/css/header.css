@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+  overflow-x: hidden;
+}
+.nav_links li,.nav_links a{
+    font-family: "Montserrat",sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: #E5E5E5;
+    text-decoration: none;
+}
+header{
+    display: flex;
+    position: fixed;
+    overflow: hidden;
+    z-index: 12;
+    top: 0;
+    height: 10vh;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 10%;
+    background: rgba(0, 0, 0, 0);
+    transition: top 0.3s
+}
+.logo, header>a{
+    cursor: pointer;
+    overflow: hidden;
+    height: 60px;
+    width: 60px;
+    margin-right: auto;
+}
+.nav_links {
+    list-style: none;
+}
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+.nav_links li a:hover,li p:hover{
+    color: dimgrey;
+}
+.burger{
+    display: none;
+}
+@media (max-width:1080px)
+{
+
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .nav_links{
+        top:0;
+        padding-top: 6vh;
+        position: fixed;
+        background-color: rgba(141, 198, 63, 0.60);
+        right: 0;
+        width: 50%;
+        height: 200vh;
+        display: flex-container;
+        flex-direction: column;
+        float: right;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav_links li{
+        width: 100%;
+        margin: 4vh 0;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 3vh 3vh;
+        text-align: center;
+        background-color: gray;
+        
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
+        z-index: 20;
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+
+#signin{
+    display: block;
+    overflow: hidden;
+    height: 0%;
+    transition: ease 0.5s;
+  }
+  .parent-signin{
+    position: fixed;
+    z-index: 15;
+    margin: 15vh 35vw;
+    width: 30vw;
+    height: 70vh;
+  
+  }
+  .container2-signin{
+    margin: auto;
+    width: inherit;
+    height: 70vh;
+    display: grid;
+    grid-row: 1fr;
+    grid-template-rows: 25vh repeat(3,7vh) auto;
+    background: rgb(239, 239, 239);
+    box-shadow: inset 0px 0px 17px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    border: 3px solid rgba(141, 198, 63, 0.8);
+    border-radius: 10px;
+    /* border-radius: 44px; */
+  }
+  .ip-signin,.ip1-signin,.social,.title-signin{
+    display: block;
+  }
+  .social{
+  }
+  .ip-signin{
+    padding: 0;
+    background: white;
+    border: 0.5px groove #000000 ;
+    box-sizing: border-box;
+  }
+  .ip1-signin{
+    padding: 0;
+    background: #87c37a;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+  }
+  .title-signin{
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 108px;
+    align-items: center;
+    color: #000000;
+    
+    
+  }
+  .ip-signin>input,.ip1-signin>input{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 38px;
+    vertical-align: top;
+    text-align: center;
+    color: black;
+  }
+  .ip1-signin>input{
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  .ip-signin>input:focus,.ip1-signin>input:focus,.ip-signin>input:active,.ip1-signin>input:active{
+    outline:0;
+    border-color: #aaaaaa;
+    background: transparent;
+  }
+  .container2-signin>form{
+    display: contents;
+  }
+  .signin{
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    line-height: 4vh;
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    color: black;
+  }
+  .signin:hover{
+    font-size: 16px;
+  }
+
+  #screen{
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    height: 0%;
+    width: 100%;
+    background-color: black;
+    opacity: 70%;
+    z-index: 14;
+  }
+  @media (max-width:800px)
+  {
+  
+    .parent-signin{
+      margin: 14vh 15vw;
+      width: 70vw;
+    }
+  }
+  
+  /*sign up*/
+  
+  #signup{
+    display: block;
+    height: 0%;
+    overflow: hidden;
+    transition: ease 0.5s;
+  }
+  .parent-signup{
+    position: fixed;
+    z-index: 15;
+    margin: 15vh 35vw;
+    width: 30vw;
+    height: 70vh;
+  
+  }
+  .container2-signup{
+    margin: auto;
+    width: inherit;
+    height: 75vh;
+    display: grid;
+    grid-row: 1fr;
+    grid-template-rows: 25vh repeat(5,7vh) auto;
+    background: rgb(239, 239, 239);
+    box-shadow: inset 0px 0px 17px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    border: 3px solid rgba(141, 198, 63, 0.8);
+    border-radius: 10px;
+    /* border-radius: 44px; */
+  }
+  .ip-signup,.ip1-signup,.social,.title-signup{
+    display: block;
+  }
+  .social{
+  }
+  .ip-signup{
+    padding: 0;
+    background: #FFFFFF;
+    border: 0.5px groove #000000 ;
+    box-sizing: border-box;
+  }
+  .ip1-signup{
+    padding: 0;
+    background: rgba(141, 198, 63, 1);
+    border: 1px solid #000000;
+    box-sizing: border-box;
+  }
+  .title-signup{
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 80px;
+    line-height: 108px;
+    align-items: center;
+    color: #000000;
+  }
+  .ip-signup>input,.ip1-signup>input{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 38px;
+    vertical-align: top;
+    text-align: center;
+  }
+  .ip1-signup>input{
+    font-weight: 500;
+    color: #FFFFFF;
+  }
+  .ip-signup>input:focus,.ip1-signup>input:focus,.ip-signup>input:active,.ip1-signup>input:active{
+    outline:0;
+    border-color: #aaaaaa;
+    background: transparent;
+  }
+  .container2-signup>form{
+    display: contents;
+  }
+  .signup{
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    line-height: 4vh;
+    background: transparent;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  @media (max-width:1000px)
+  {
+  
+    .parent-signup{
+      margin: 14vh 15vw;
+      width: 70vw;
+    }
+  }
+  @media(max-width:500px)
+  {
+    .title-signup,.title-signin{
+      font-size: 50px;
+    }
+  }
+
+  .errors,.errors1{
+    display: none;
+  }
