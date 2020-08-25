@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.contrib.auth.models import User
@@ -15,7 +15,6 @@ from django.contrib.auth import login, authenticate, logout
 
 from accounts.forms import *
 from accounts.models import *
-from django.http import HttpResponseRedirect
 
 # @login_required
 # def index(request):
@@ -50,7 +49,7 @@ def register(request):
                 uidb64 = urlsafe_base64_encode(force_bytes(p.pk))
                 domain = get_current_site(request).domain
 
-                return HttpResponseRedirect(reverse('accounts:home'))
+                return redirect('home')
             else :
                 context['registration_form'] = form
             
@@ -73,7 +72,7 @@ def register(request):
                     #     context['email_verified'] = 0
                     #     return redirect('home')
                     print("logged in")
-                    return HttpResponseRedirect(reverse('social_media:create_profile'))
+                    return redirect('home')
             else:
                 context['login_form'] = form
 
