@@ -77,12 +77,31 @@ WSGI_APPLICATION = 'Social_Influencer.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+# [START db_setup]
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/gkmr-sps-summer20:us-central1:gkmr-instance',
+            'NAME': 'djangodb',
+            'USER': 'root',
+            'PASSWORD': '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'djangodb',
+            'USER': 'root',
+            'PASSWORD': 'google',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+        }
+    }
+# [END db_setup]
 
 
 # Password validation
