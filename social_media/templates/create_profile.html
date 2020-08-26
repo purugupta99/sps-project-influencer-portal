@@ -1,14 +1,38 @@
-{% comment %} {% extends 'base.html' %} 
+{% extends 'base.html' %} 
 {% load static %} 
 {% load widget_tweaks %}
 
 {% block css %}
+<link rel="stylesheet" href="{% static 'css/create_profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/landing.css' %}">
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
 {% endblock %} 
-{% block title %}Complete Profile{% endblock %} 
-{% block content %} {% endcomment %}
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
-</form>
-{% comment %} {% endblock %}  {% endcomment %}
+{% comment %} {% block title %}Complete Profile{% endblock %}  {% endcomment %}
+{% block content %} 
+    <div class="mainimg">
+        <div class="create-profile">
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" class="submit-button" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block js %}
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header").style.background = "rgba(0, 0, 0, 0)";
+        } else {
+            document.getElementById('header').style.background = "rgba(0, 0, 0, 0.30)";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+{% endblock %}

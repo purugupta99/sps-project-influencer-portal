@@ -1,6 +1,40 @@
-{% for media_accounts in accounts %}
-    <p> <b> Social Media : </b> </p>
-    {{ media_accounts.Account_Type }}
-    <p> <b> Username: </b> </p>
-    {{ media_accounts.Username  }}
-{% endfor %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% load widget_tweaks %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+<link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+<link rel="stylesheet" href="{% static 'css/header.css' %}" />
+{% endblock %} 
+{% comment %} {% block title %}Complete Profile{% endblock %}  {% endcomment %}
+{% block content %} 
+<div class="mainimg">
+    <div class="media_accounts">
+        
+        {% for media_accounts in accounts %}
+            
+            <p> <b> Social Media : </b> {{ media_accounts.Account_Type }}  </p>
+            <p> <b> Username: </b> {{ media_accounts.Username  }} </p>            
+        
+        {% endfor %}
+        <p> <b> Hobbies: </b> {{ profile.Hobbies }} </p>
+        <p> <b> Interests: </b> {{ profile.Interests }} </p>
+    </div>
+</div>
+{% endblock %} 
+
+{% block js %}
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header").style.background = "rgba(0, 0, 0, 0)";
+        } else {
+            document.getElementById('header').style.background = "rgba(0, 0, 0, 0.30)";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+{% endblock %}
