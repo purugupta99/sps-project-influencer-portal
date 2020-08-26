@@ -6,16 +6,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/loading.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'css/loading.css' %}"> -->
     <link rel="stylesheet" href="{% static 'css/footer.css' %}"> 
     {% block css %}{% endblock %}
-    <title>{% block title %}EventBrite{% endblock %}</title>
+    <title>{% block title %}Influz{% endblock %}</title>
 </head>
 
 <body>
-    <div id="preload">
+    <!-- <div id="preload">
         <div class="spinner"></div>
-    </div>
+    </div> -->
     <div id="signin" class="parent-signin">
         <div class="container2-signin">
             <div class="title-signin">Login</div>
@@ -34,7 +34,7 @@
             </form>
             <div class="social-signin">
                 <!-- <a href=''>Login with facebook </a> -->
-                <a href="password_reset/" class="signin">Forgot your Password</a>
+                <!-- <a href="password_reset/" class="signin">Forgot your Password</a> -->
                 <div onclick="mySignup()" class="signin">Don't have an account?</div>
             </div>
 
@@ -68,7 +68,7 @@
     <div id="screen" onclick="myFunction1()"></div>
     <header id="header">
         <a href="{% url 'accounts:home' %}"><img src="{% static 'images/influencer-logo.png' %}" alt="logo" class="logo"></a>
-        <img src="{% static 'images/open-menu 1.svg' %}" alt="menu" class="burger">
+        <img src="{% static 'images/open-menu.svg' %}" alt="menu" class="burger">
         <nav>
             <!-- <img src="images/x.svg" alt="exit" class="burger"> -->
             <ul class="nav_links">
@@ -171,38 +171,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyD766QVHBRe-KZsDWV0JcwDQxtJRYGDXEc&libraries=places"></script>
     <script src="{% static 'js/app.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script>
-        $('.heart').on('click',function()
-        {
-            console.log($(this).attr('value'))
-            $.get('/like/'+$(this).attr('value'),function(data)
-            {
-                // check for the return statement to decite colour of the like event
-                // console.log(data)
-                
-            });
-            $(this).toggleClass("not-filled");
-            $(this).toggleClass("filled");
-        });
-        $('.follow').on('click',function()
-        {
-            console.log($(this).attr('value'))
-            $.get('/follow/'+$(this).attr('value'),function(data)
-            {
-                // check for the return statement to decite colour of the like event
-                // console.log(data)
-                
-            });
-        });
-
-        $(document).ready(function() {
-            
-            setTimeout(function(){
-                $('body').addClass('loaded');
-            }, 1000);
-
-            });
-    </script>
+    
     {% block js %}{% endblock %}
 </body>
 </html>
