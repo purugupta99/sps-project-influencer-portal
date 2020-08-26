@@ -2,6 +2,7 @@ from django.shortcuts import render, reverse
 from .models import Social_Media, Profile_Information
 from .forms import ProfileForm
 from django.http.response import HttpResponseRedirect
+from django.core.exceptions import PermissionDenied
 
 
 def create_profile(request):
@@ -36,6 +37,17 @@ def create_profile(request):
             else:
                 raise Exception('Already Added '+account_type+' in the Profile.')
 
+    if( request.user.is_authenticated ):
+        profile = None
+        try:
+            profile = Profile_Information.objects.get(user=request.user)
+        except:
+            print(profile)        
+
+        if(profile):
+            return HttpResponseRedirect(reverse('social_media:profile'))
+    else:
+        raise PermissionDenied
     form = ProfileForm()
     context={}
     context['form'] = form
