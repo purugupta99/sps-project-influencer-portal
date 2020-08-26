@@ -1,0 +1,12 @@
+.media_accounts {
+    display: inline-block;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    /* text-align: center; */
+    color: #FFFFFF;
+}
+.media_accounts b{
+    color: #5fc5e7;
+}

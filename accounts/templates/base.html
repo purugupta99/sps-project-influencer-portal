@@ -78,9 +78,12 @@
                     Your Fans
                 </li>
                 <li>
-                    {{user.username}}
+                    <a href="{% url 'social_media:profile' %}">{{user.username}} </a>
                 </li>
                 <li>
+                <li>
+                    <a href="{% url 'social_media:create_profile'%}"> Edit Profile</a>
+                </li>
                     <a href="{% url 'accounts:logout' %}">Logout</a>
                 </li>
                 {% else %}
